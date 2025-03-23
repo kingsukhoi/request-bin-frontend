@@ -1,5 +1,5 @@
-import ky from "ky";
 import {convertBase64toUtf8} from "../helpers/textConversion.ts";
+import {api} from "../helpers/kyConfig.ts";
 
 export interface RbRequest {
   id: string
@@ -12,7 +12,7 @@ export interface RbRequest {
 
 
 export async function GetRequests(): Promise<RbRequest[]> {
-  const rtnMe = await ky.get("http://localhost:8080/v1/requests").json<RbRequest[]>();
+  const rtnMe = await api.get("v1/requests",).json<RbRequest[]>();
 
   rtnMe.forEach(r => {
     if (!r.content) {
