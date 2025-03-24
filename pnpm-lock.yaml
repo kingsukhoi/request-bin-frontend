@@ -18,42 +18,42 @@ importers:
         specifier: ^8.1.1
         version: 8.1.1(@rspack/core@1.2.8(@swc/helpers@0.5.15))(postcss@8.5.3)(typescript@5.8.2)
       svelte:
-        specifier: ^5.23.2
-        version: 5.25.2
+        specifier: ^5.25.3
+        version: 5.25.3
       svelte-highlight:
         specifier: ^7.8.2
         version: 7.8.2
     devDependencies:
       '@eslint/js':
-        specifier: ^9.22.0
+        specifier: ^9.23.0
         version: 9.23.0
       '@rsbuild/core':
         specifier: ^1.2.19
         version: 1.2.19
       '@rsbuild/plugin-svelte':
         specifier: ^1.0.8
-        version: 1.0.8(@rsbuild/core@1.2.19)(postcss-load-config@3.1.4(postcss@8.5.3))(postcss@8.5.3)(svelte@5.25.2)(typescript@5.8.2)
+        version: 1.0.8(@rsbuild/core@1.2.19)(postcss-load-config@3.1.4(postcss@8.5.3))(postcss@8.5.3)(svelte@5.25.3)(typescript@5.8.2)
       '@skeletonlabs/skeleton':
         specifier: ^3.1.1
         version: 3.1.1(tailwindcss@4.0.15)
       '@skeletonlabs/skeleton-svelte':
         specifier: ^1.0.0
-        version: 1.0.0(@skeletonlabs/skeleton@3.1.1(tailwindcss@4.0.15))(svelte@5.25.2)
+        version: 1.0.0(@skeletonlabs/skeleton@3.1.1(tailwindcss@4.0.15))(svelte@5.25.3)
       '@tailwindcss/postcss':
         specifier: ^4.0.15
         version: 4.0.15
       eslint:
-        specifier: ^9.22.0
+        specifier: ^9.23.0
         version: 9.23.0(jiti@2.4.2)
       eslint-plugin-svelte:
-        specifier: ^3.3.2
-        version: 3.3.3(eslint@9.23.0(jiti@2.4.2))(svelte@5.25.2)
+        specifier: ^3.3.3
+        version: 3.3.3(eslint@9.23.0(jiti@2.4.2))(svelte@5.25.3)
       globals:
         specifier: ^16.0.0
         version: 16.0.0
       svelte-check:
         specifier: ^4.1.5
-        version: 4.1.5(picomatch@4.0.2)(svelte@5.25.2)(typescript@5.8.2)
+        version: 4.1.5(picomatch@4.0.2)(svelte@5.25.3)(typescript@5.8.2)
       tailwindcss:
         specifier: ^4.0.15
         version: 4.0.15
@@ -61,7 +61,7 @@ importers:
         specifier: ^5.8.2
         version: 5.8.2
       typescript-eslint:
-        specifier: ^8.26.1
+        specifier: ^8.27.0
         version: 8.27.0(eslint@9.23.0(jiti@2.4.2))(typescript@5.8.2)
 
 packages:
@@ -574,8 +574,8 @@ packages:
     resolution: {integrity: sha512-P8BjAsXvZS+VIDUI11hHCQEv74YT67YUi5JJFNWIqL235sBmjX4+qx9Muvls5ivyNENctx46xQLQ3aTuE7ssaQ==}
     engines: {node: '>=6'}
 
-  caniuse-lite@1.0.30001706:
-    resolution: {integrity: sha512-3ZczoTApMAZwPKYWmwVbQMFpXBDds3/0VciVoUwPUbldlYyVLmRVuRs/PcUZtHpbLRpzzDvrvnFuREsGt6lUug==}
+  caniuse-lite@1.0.30001707:
+    resolution: {integrity: sha512-3qtRjw/HQSMlDWf+X79N206fepf4SOOU6SQLMaq/0KkZLmSjPxAkBOQQ+FxbHKfHmYLZFfdWsO3KA90ceHPSnw==}
 
   chalk@4.1.2:
     resolution: {integrity: sha512-oKnbhFyRIXpUuez8iBMmyEa4nbj4IOQyuhc/wy9kY7/WVPcwIO9VA668Pu8RkO7+0G76SLROeyw9CpQ061i4mA==}
@@ -1209,8 +1209,8 @@ packages:
       typescript:
         optional: true
 
-  svelte@5.25.2:
-    resolution: {integrity: sha512-IxmBz4x15+bNbowhygUlwoVgqMLfEIDtyjUFDfOwb1f+7Fe5qeLfwGJHMql7QUSJBqNtXcOCPsZDDmuieZcpfA==}
+  svelte@5.25.3:
+    resolution: {integrity: sha512-J9rcZ/xVJonAoESqVGHHZhrNdVbrCfkdB41BP6eiwHMoFShD9it3yZXApVYMHdGfCshBsZCKsajwJeBbS/M1zg==}
     engines: {node: '>=18'}
 
   tailwindcss@4.0.15:
@@ -1420,11 +1420,11 @@ snapshots:
     transitivePeerDependencies:
       - '@rspack/tracing'
 
-  '@rsbuild/plugin-svelte@1.0.8(@rsbuild/core@1.2.19)(postcss-load-config@3.1.4(postcss@8.5.3))(postcss@8.5.3)(svelte@5.25.2)(typescript@5.8.2)':
+  '@rsbuild/plugin-svelte@1.0.8(@rsbuild/core@1.2.19)(postcss-load-config@3.1.4(postcss@8.5.3))(postcss@8.5.3)(svelte@5.25.3)(typescript@5.8.2)':
     dependencies:
       '@rsbuild/core': 1.2.19
-      svelte-loader: 3.2.4(svelte@5.25.2)
-      svelte-preprocess: 6.0.3(postcss-load-config@3.1.4(postcss@8.5.3))(postcss@8.5.3)(svelte@5.25.2)(typescript@5.8.2)
+      svelte-loader: 3.2.4(svelte@5.25.3)
+      svelte-preprocess: 6.0.3(postcss-load-config@3.1.4(postcss@8.5.3))(postcss@8.5.3)(svelte@5.25.3)(typescript@5.8.2)
     transitivePeerDependencies:
       - '@babel/core'
       - coffeescript
@@ -1482,13 +1482,13 @@ snapshots:
       '@module-federation/runtime-tools': 0.8.4
       '@rspack/binding': 1.2.8
       '@rspack/lite-tapable': 1.0.1
-      caniuse-lite: 1.0.30001706
+      caniuse-lite: 1.0.30001707
     optionalDependencies:
       '@swc/helpers': 0.5.15
 
   '@rspack/lite-tapable@1.0.1': {}
 
-  '@skeletonlabs/skeleton-svelte@1.0.0(@skeletonlabs/skeleton@3.1.1(tailwindcss@4.0.15))(svelte@5.25.2)':
+  '@skeletonlabs/skeleton-svelte@1.0.0(@skeletonlabs/skeleton@3.1.1(tailwindcss@4.0.15))(svelte@5.25.3)':
     dependencies:
       '@skeletonlabs/skeleton': 3.1.1(tailwindcss@4.0.15)
       '@zag-js/accordion': 1.5.0
@@ -1502,12 +1502,12 @@ snapshots:
       '@zag-js/radio-group': 1.5.0
       '@zag-js/rating-group': 1.5.0
       '@zag-js/slider': 1.5.0
-      '@zag-js/svelte': 1.5.0(svelte@5.25.2)
+      '@zag-js/svelte': 1.5.0(svelte@5.25.3)
       '@zag-js/switch': 1.5.0
       '@zag-js/tabs': 1.5.0
       '@zag-js/tags-input': 1.5.0
       '@zag-js/tooltip': 1.5.0
-      svelte: 5.25.2
+      svelte: 5.25.3
 
   '@skeletonlabs/skeleton@3.1.1(tailwindcss@4.0.15)':
     dependencies:
@@ -1838,12 +1838,12 @@ snapshots:
     dependencies:
       proxy-compare: 3.0.1
 
-  '@zag-js/svelte@1.5.0(svelte@5.25.2)':
+  '@zag-js/svelte@1.5.0(svelte@5.25.3)':
     dependencies:
       '@zag-js/core': 1.5.0
       '@zag-js/types': 1.5.0
       '@zag-js/utils': 1.5.0
-      svelte: 5.25.2
+      svelte: 5.25.3
 
   '@zag-js/switch@1.5.0':
     dependencies:
@@ -1933,7 +1933,7 @@ snapshots:
 
   callsites@3.1.0: {}
 
-  caniuse-lite@1.0.30001706: {}
+  caniuse-lite@1.0.30001707: {}
 
   chalk@4.1.2:
     dependencies:
@@ -2003,7 +2003,7 @@ snapshots:
       eslint: 9.23.0(jiti@2.4.2)
       semver: 7.7.1
 
-  eslint-plugin-svelte@3.3.3(eslint@9.23.0(jiti@2.4.2))(svelte@5.25.2):
+  eslint-plugin-svelte@3.3.3(eslint@9.23.0(jiti@2.4.2))(svelte@5.25.3):
     dependencies:
       '@eslint-community/eslint-utils': 4.5.1(eslint@9.23.0(jiti@2.4.2))
       '@jridgewell/sourcemap-codec': 1.5.0
@@ -2015,9 +2015,9 @@ snapshots:
       postcss-load-config: 3.1.4(postcss@8.5.3)
       postcss-safe-parser: 7.0.1(postcss@8.5.3)
       semver: 7.7.1
-      svelte-eslint-parser: 1.1.0(svelte@5.25.2)
+      svelte-eslint-parser: 1.1.0(svelte@5.25.3)
     optionalDependencies:
-      svelte: 5.25.2
+      svelte: 5.25.3
     transitivePeerDependencies:
       - ts-node
 
@@ -2422,21 +2422,21 @@ snapshots:
     dependencies:
       has-flag: 4.0.0
 
-  svelte-check@4.1.5(picomatch@4.0.2)(svelte@5.25.2)(typescript@5.8.2):
+  svelte-check@4.1.5(picomatch@4.0.2)(svelte@5.25.3)(typescript@5.8.2):
     dependencies:
       '@jridgewell/trace-mapping': 0.3.25
       chokidar: 4.0.3
       fdir: 6.4.3(picomatch@4.0.2)
       picocolors: 1.1.1
       sade: 1.8.1
-      svelte: 5.25.2
+      svelte: 5.25.3
       typescript: 5.8.2
     transitivePeerDependencies:
       - picomatch
 
   svelte-dev-helper@1.1.9: {}
 
-  svelte-eslint-parser@1.1.0(svelte@5.25.2):
+  svelte-eslint-parser@1.1.0(svelte@5.25.3):
     dependencies:
       eslint-scope: 8.3.0
       eslint-visitor-keys: 4.2.0
@@ -2445,32 +2445,32 @@ snapshots:
       postcss-scss: 4.0.9(postcss@8.5.3)
       postcss-selector-parser: 7.1.0
     optionalDependencies:
-      svelte: 5.25.2
+      svelte: 5.25.3
 
   svelte-highlight@7.8.2:
     dependencies:
       highlight.js: 11.11.1
 
-  svelte-hmr@0.14.12(svelte@5.25.2):
+  svelte-hmr@0.14.12(svelte@5.25.3):
     dependencies:
-      svelte: 5.25.2
+      svelte: 5.25.3
 
-  svelte-loader@3.2.4(svelte@5.25.2):
+  svelte-loader@3.2.4(svelte@5.25.3):
     dependencies:
       loader-utils: 2.0.4
-      svelte: 5.25.2
+      svelte: 5.25.3
       svelte-dev-helper: 1.1.9
-      svelte-hmr: 0.14.12(svelte@5.25.2)
+      svelte-hmr: 0.14.12(svelte@5.25.3)
 
-  svelte-preprocess@6.0.3(postcss-load-config@3.1.4(postcss@8.5.3))(postcss@8.5.3)(svelte@5.25.2)(typescript@5.8.2):
+  svelte-preprocess@6.0.3(postcss-load-config@3.1.4(postcss@8.5.3))(postcss@8.5.3)(svelte@5.25.3)(typescript@5.8.2):
     dependencies:
-      svelte: 5.25.2
+      svelte: 5.25.3
     optionalDependencies:
       postcss: 8.5.3
       postcss-load-config: 3.1.4(postcss@8.5.3)
       typescript: 5.8.2
 
-  svelte@5.25.2:
+  svelte@5.25.3:
     dependencies:
       '@ampproject/remapping': 2.3.0
       '@jridgewell/sourcemap-codec': 1.5.0
