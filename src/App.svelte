@@ -1,49 +1,45 @@
 <script lang="ts">
   import "./app.css";
-  import {onMount} from 'svelte';
-  import type {RbRequest} from "./api/rbRequest.ts";
-  import {GetRequests} from "./api/rbRequest.ts";
-  import {HighlightAuto} from "svelte-highlight";
-  import {formatDate} from "./helpers/dates.ts";
+  import {GetRequestHeadersById, type RbRequest, type RbRequestHeader} from "./api/rbRequest.ts";
+  import RequestTable from "./components/RequestTable.svelte";
+  import {HighlightAuto, LineNumbers} from "svelte-highlight";
 
-  let requests: RbRequest[] = $state([])
+  let currRequest: RbRequest | undefined = $state(undefined);
+  let requestHeaders: RbRequestHeader[] = $state([])
 
-  onMount(async () => {
-    requests = await GetRequests()
+  $effect(() => {
+    if (currRequest) {
+      GetRequestHeadersById(currRequest.id).then(r => {
+          requestHeaders = r;
+        }
+      )
+    } else {
+      requestHeaders = [];
+    }
   })
 
+  function handleRowClick(req: RbRequest) {
+    currRequest = req;
+  }
 
 </script>
 
 
 <main class="justify-center">
-    <div class="">
-        <table class="table caption-bottom">
-            <thead>
-            <tr>
-                <td>Id</td>
-                <td>Method</td>
-                <td>Content</td>
-                <td>Source Ip</td>
-                <td>Response Code</td>
-                <td>Time</td>
-            </tr>
-            </thead>
-            <tbody>
-            {#each requests as req (req.id)}
-                <tr>
-                    <td>{req.id}</td>
-                    <td>{req.method}</td>
-                    <td>
-                        <HighlightAuto code={req.content}/>
-                    </td>
-                    <td>{req.sourceIp}</td>
-                    <td>{req.responseCode}</td>
-                    <td>{formatDate(req.timestamp)}</td>
-                </tr>
 
-            {/each}
-            </tbody>
-        </table>
-    </div>
+    <RequestTable handleRowClick={handleRowClick}/>
+
+    {#if currRequest}
+        {#each requestHeaders as curr (curr.requestId + curr.name)}
+            <div>{curr.name}: {curr.value}</div>
+        {/each}
+        {#if currRequest.content}
+            <HighlightAuto
+                    code={currRequest.content}
+                    let:highlighted
+            >
+                <LineNumbers {highlighted}/>
+            </HighlightAuto>
+        {/if}
+    {/if}
 </main>

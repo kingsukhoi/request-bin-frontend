@@ -10,6 +10,12 @@ export interface RbRequest {
   timestamp: Date
 }
 
+export interface RbRequestHeader {
+  requestId: string
+  name: string
+  value: string
+}
+
 
 export async function GetRequests(): Promise<RbRequest[]> {
   const rtnMe = await api.get("v1/requests",).json<RbRequest[]>();
@@ -23,4 +29,13 @@ export async function GetRequests(): Promise<RbRequest[]> {
   })
 
   return rtnMe.sort((a, b) => b.timestamp.getTime() - a.timestamp.getTime());
+}
+
+export async function GetRequestHeadersById(id: string): Promise<RbRequestHeader[]> {
+  const rtnMe = await api.get(`v1/requests/headers?request_id=${id}`).json<RbRequestHeader[]>();
+
+  rtnMe.sort((a, b) => a.name.localeCompare(b.name))
+
+  return rtnMe;
+
 }
