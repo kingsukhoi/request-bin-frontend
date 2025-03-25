@@ -3,6 +3,8 @@
   import {GetRequestHeadersById, type RbRequest, type RbRequestHeader} from "./api/rbRequest.ts";
   import RequestTable from "./components/RequestTable.svelte";
   import {HighlightAuto, LineNumbers} from "svelte-highlight";
+  import {FormatContent} from "./helpers/formatters.ts";
+  import "svelte-highlight/styles/dark-violet.css";
 
   let currRequest: RbRequest | undefined = $state(undefined);
   let requestHeaders: RbRequestHeader[] = $state([])
@@ -24,22 +26,23 @@
 
 </script>
 
-
-<main class="justify-center">
-
+<main class="grid grid-cols-2 overflow-y-auto">
     <RequestTable handleRowClick={handleRowClick}/>
 
     {#if currRequest}
-        {#each requestHeaders as curr (curr.requestId + curr.name)}
-            <div>{curr.name}: {curr.value}</div>
-        {/each}
-        {#if currRequest.content}
-            <HighlightAuto
-                    code={currRequest.content}
-                    let:highlighted
-            >
-                <LineNumbers {highlighted}/>
-            </HighlightAuto>
-        {/if}
+        <div>
+            {#each requestHeaders as curr (curr.requestId + curr.name)}
+                <div>{curr.name}: {curr.value}</div>
+            {/each}
+            {#if currRequest.content}
+                <HighlightAuto
+                        code={FormatContent(requestHeaders, currRequest.content)}
+                        let:highlighted
+                >
+                    <LineNumbers {highlighted}/>
+                </HighlightAuto>
+            {/if}
+        </div>
     {/if}
+
 </main>
