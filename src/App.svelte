@@ -26,11 +26,13 @@
 
 </script>
 
-<main class="grid grid-cols-2 overflow-y-auto">
+<main class="flex flex-col">
+
     <RequestTable handleRowClick={handleRowClick}/>
 
     {#if currRequest}
         <div>
+            <div>id: {currRequest.id}</div>
             {#each requestHeaders as curr (curr.requestId + curr.name)}
                 <div>{curr.name}: {curr.value}</div>
             {/each}

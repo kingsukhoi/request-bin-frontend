@@ -8,4 +8,7 @@ export default defineConfig({
     define: publicVars,
   },
   plugins: [pluginSvelte()],
+  html: {
+    template: 'src/index.html',
+  }
 })

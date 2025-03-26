@@ -7,33 +7,38 @@
 
   interface Props {
     handleRowClick: (req: RbRequest) => void
+    refreshInterval: number
   }
-  let {handleRowClick} : Props = $props();
+  let {handleRowClick, refreshInterval = 5000} : Props = $props();
 
   let requests: RbRequest[] = $state([])
   onMount(async () => {
     requests = await GetRequests()
+    setInterval(async () => {
+      requests = await GetRequests()
+    }, refreshInterval)
+
   })
 </script>
 <div class="">
     <table class="table caption-bottom">
         <thead>
         <tr>
-            <td>Id</td>
+            <td>Received</td>
             <td>Method</td>
-            <td>Source Ip</td>
             <td>Response Code</td>
-            <td>Time</td>
+            <td>Source Ip</td>
+            <td>Id</td>
         </tr>
         </thead>
         <tbody>
         {#each requests as req (req.id)}
-            <tr class="hover:bg-gray-700 odd:bg-primary-500" onclick={()=>handleRowClick(req)}>
-                <td>{req.id}</td>
-                <td>{req.method}</td>
-                <td>{req.sourceIp}</td>
-                <td>{req.responseCode}</td>
+            <tr class="hover:preset-tonal odd:preset-tonal-primary" onclick={()=>handleRowClick(req)}>
                 <td>{formatDate(req.timestamp)}</td>
+                <td>{req.method}</td>
+                <td>{req.responseCode}</td>
+                <td>{req.sourceIp}</td>
+                <td>{req.id.split("-").pop()}</td>
             </tr>
 
         {/each}
