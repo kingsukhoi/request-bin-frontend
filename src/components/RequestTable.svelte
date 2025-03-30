@@ -7,9 +7,10 @@
 
   interface Props {
     handleRowClick: (req: RbRequest) => void
-    refreshInterval: number
+    refreshInterval?: number
+    className: string
   }
-  let {handleRowClick, refreshInterval = 5000} : Props = $props();
+  let {handleRowClick, refreshInterval = 5000, className} : Props = $props();
 
   let requests: RbRequest[] = $state([])
   onMount(async () => {
@@ -20,7 +21,8 @@
 
   })
 </script>
-<div class="">
+
+<div class={className}>
     <table class="table caption-bottom">
         <thead>
         <tr>

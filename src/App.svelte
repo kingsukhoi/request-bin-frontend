@@ -2,9 +2,10 @@
   import "./app.css";
   import {GetRequestHeadersById, type RbRequest, type RbRequestHeader} from "./api/rbRequest.ts";
   import RequestTable from "./components/RequestTable.svelte";
-  import {HighlightAuto, LineNumbers} from "svelte-highlight";
   import {FormatContent} from "./helpers/formatters.ts";
-  import "svelte-highlight/styles/dark-violet.css";
+  import {fade} from "svelte/transition";
+  import {X} from "@lucide/svelte"
+  import CodeBlock from "./components/CodeBlock.svelte";
 
   let currRequest: RbRequest | undefined = $state(undefined);
   let requestHeaders: RbRequestHeader[] = $state([])
@@ -26,23 +27,26 @@
 
 </script>
 
-<main class="flex flex-col">
+<main class="grid h-screen grid-cols-3">
 
-    <RequestTable handleRowClick={handleRowClick}/>
+    <RequestTable
+            className={currRequest ? "col-span-2" : "col-span-3"}
+            handleRowClick={handleRowClick}
+    />
 
     {#if currRequest}
-        <div>
+        <div transition:fade={{duration: 300}} class="col-span-1">
+            <button class="absolute top-0 right-0"
+                    onclick={() => currRequest = undefined}
+            >
+                <X />
+            </button>
             <div>id: {currRequest.id}</div>
             {#each requestHeaders as curr (curr.requestId + curr.name)}
                 <div>{curr.name}: {curr.value}</div>
             {/each}
             {#if currRequest.content}
-                <HighlightAuto
-                        code={FormatContent(requestHeaders, currRequest.content)}
-                        let:highlighted
-                >
-                    <LineNumbers {highlighted}/>
-                </HighlightAuto>
+                <CodeBlock lang="json" code= {FormatContent(requestHeaders, currRequest.content)}/>
             {/if}
         </div>
     {/if}
