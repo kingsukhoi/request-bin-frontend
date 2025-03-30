@@ -2,20 +2,21 @@
 
 
 <script module lang="ts">
-    import { createHighlighterCoreSync } from 'shiki/core';
-    import { createJavaScriptRegexEngine } from 'shiki/engine/javascript';
-    // Themes
-    // https://shiki.style/themes
-    import themeDarkPlus from 'shiki/themes/dark-plus.mjs';
-    // Languages
-    // https://shiki.style/languages
-    import console from 'shiki/langs/console.mjs';
-    import html from 'shiki/langs/html.mjs';
-    import css from 'shiki/langs/css.mjs';
-    import js from 'shiki/langs/javascript.mjs';
-    import json from 'shiki/langs/json.mjs'
+  import {createHighlighterCoreSync} from 'shiki/core';
+  import {createJavaScriptRegexEngine} from 'shiki/engine/javascript';
+  // Themes
+  // https://shiki.style/themes
+  import themeDarkPlus from 'shiki/themes/dark-plus.mjs';
+  // Languages
+  // https://shiki.style/languages
+  import console from 'shiki/langs/console.mjs';
+  import html from 'shiki/langs/html.mjs';
+  import css from 'shiki/langs/css.mjs';
+  import js from 'shiki/langs/javascript.mjs';
+  import json from 'shiki/langs/json.mjs'
+  import DOMPurify from 'dompurify';
 
-    export interface CodeBlockProps {
+  export interface CodeBlockProps {
       code?: string;
       lang?: 'console' | 'html' | 'css' | 'js';
       theme?: 'dark-plus';
@@ -38,6 +39,8 @@
         // Implement your imported and supported languages.
         langs: [console, html, css, js, json]
     });
+
+
 </script>
 
 <script lang="ts">
@@ -58,9 +61,12 @@
   }: CodeBlockProps = $props();
 
   // Shiki convert to HTML
-  const generatedHtml = shiki.codeToHtml(code, { lang, theme });
+  const generatedHtml = shiki.codeToHtml(DOMPurify.sanitize(code), {lang, theme});
 </script>
 
 <div class="{base} {rounded} {shadow} {classes} {preBase} {prePadding} {preClasses}">
+
+    <!--    fixed it with dom purify above-->
+    <!--eslint-disable-next-line svelte/no-at-html-tags-->
     {@html generatedHtml}
 </div>
