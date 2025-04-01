@@ -11,7 +11,7 @@
     "svelte-check": "svelte-check --tsconfig ./tsconfig.json"
   },
   "dependencies": {
-    "@lucide/svelte": "^0.484.0",
+    "@lucide/svelte": "^0.486.0",
     "ky": "^1.7.5",
     "postcss": "^8.5.3",
     "postcss-loader": "^8.1.1",

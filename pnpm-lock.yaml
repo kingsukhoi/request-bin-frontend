@@ -9,8 +9,8 @@ importers:
   .:
     dependencies:
       '@lucide/svelte':
-        specifier: ^0.484.0
-        version: 0.484.0(svelte@5.25.3)
+        specifier: ^0.486.0
+        version: 0.486.0(svelte@5.25.3)
       dompurify:
         specifier: ^3.2.4
         version: 3.2.4
@@ -173,8 +173,8 @@ packages:
   '@jridgewell/trace-mapping@0.3.25':
     resolution: {integrity: sha512-vNk6aEwybGtawWmy/PzwnGDOjCkLWSD2wqvjGGAgOAwCGWySYXfYoxt00IJkTF+8Lb57DwOb3Aa0o9CApepiYQ==}
 
-  '@lucide/svelte@0.484.0':
-    resolution: {integrity: sha512-yuHwfJxE1n3kOg/4hIsvAUrBv3Mood/8BCcugUyRhxyr4EJDtjHJiiCpjJmtnk1gqkCYAEREKoGPaSGilcjYKw==}
+  '@lucide/svelte@0.486.0':
+    resolution: {integrity: sha512-Q8dav9ruYhdLepb2NNngYeGaMHxFv4Qd1FPc7YYkqouHfjTOJ3fLeyKmbANioRRmtMrLBNfOez9v5EIca+VCFg==}
     peerDependencies:
       svelte: ^5
 
@@ -1522,7 +1522,7 @@ snapshots:
       '@jridgewell/resolve-uri': 3.1.2
       '@jridgewell/sourcemap-codec': 1.5.0
 
-  '@lucide/svelte@0.484.0(svelte@5.25.3)':
+  '@lucide/svelte@0.486.0(svelte@5.25.3)':
     dependencies:
       svelte: 5.25.3
 
