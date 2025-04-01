@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "@lucide/svelte": "^0.484.0",
-    "ky": "^1.7.5",
+    "ky": "^1.8.0",
     "postcss": "^8.5.3",
     "postcss-loader": "^8.1.1",
     "shiki": "^3.2.1",
